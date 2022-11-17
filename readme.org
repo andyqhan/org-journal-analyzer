@@ -1,0 +1,18 @@
+#+title: Readme
+
+* Design
+** Selection
+- select a date range, or all entries; whether to include subdirectories (configurable)
+- need an iterator that spits out file names
+- need an iterator that takes in file names and spits out sentences, words, or characters
+- (very very stretch) determining which language something is in
+** Analysis
+Ideally these are in parallel: each analysis function expects a sentence, word, or character, and a wrapper function calls the relevant iterator and passes the data into each relevant analysis function
+- character count (displayed as words or characters)
+- word frequency, a json minus words that appear only once (configurable) and minus common function words like =a(n)=, =the=, =and=, etc (configurable)
+- punctuation frequency
+- length of sentences — standard analysis: mean, median, range, stdev; graph that shows mean over time
+- length of entries — also standard analysis — also graph that shows mean over time
+** Global config
+- analysis in words or in characters (internally everything will be characters and just divide by 5 or 6)
+- ignore lines starting with something — default =*= and =#+=
